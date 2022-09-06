@@ -1,0 +1,47 @@
+{% extends "../layout.html" %}
+
+{% set pageHeading = "Where would you like to go?" %}
+
+{% block pageTitle %}
+  {{ pageHeading }} - {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" action="/v1/name">
+      
+        {{ govukRadios({
+          idPrefix: "where-to-go",
+          name: "where-to-go",
+          fieldset: {
+            legend: {
+              text: pageHeading,
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "moon",
+              text: "The Moon"
+            },
+            {
+              value: "mars",
+              text: "Mars"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
