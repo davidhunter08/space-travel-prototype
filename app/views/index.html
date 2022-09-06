@@ -2,20 +2,53 @@
 {% extends "layout.html" %}
 
 {% set hideBackLink = true %}
+{% set serviceName = 'Space travel service' %}
 
 {% block pageTitle %}
-  Home - Space travel service prototypes
+  Home - Space travel service
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
-        Space travel service prototypes
+        Space travel service
       </h1>
 
-      <p><a href="/v1/start">Version 1</a></p>
+      <h2 class="govuk-heading-l">Alpha prototypes</h2>
+      
+      <table class="govuk-table">
+        <caption class="govuk-visually-hidden">Prototypes in the Alpha phase</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col" style="width:30%"> Prototype </th>
+            <th class="govuk-table__header" scope="col"> Sprint </th>
+            <th class="govuk-table__header" scope="col"> Date </th>
+            <th class="govuk-table__header" scope="col"> Status </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="/v1/start">Register for space travel v1</a>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-visually-hidden">Alpha </span>Sprint 1
+            </td>
+            <td class="govuk-table__cell">
+              6 September 2022
+            </td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Current",
+                classes: "govuk-tag--blue"
+              })}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
 

@@ -27,7 +27,8 @@
             },
             id: "address-line-1",
             name: "address-line-1",
-            autocomplete: "address-line1"
+            autocomplete: "address-line1",
+            value: data['address-line-1']
           }) }}
         
           {{ govukInput({
@@ -36,7 +37,8 @@
             },
             id: "address-line-2",
             name: "address-line-2",
-            autocomplete: "address-line2"
+            autocomplete: "address-line2",
+            value: data['address-line-2']
           }) }}
         
           {{ govukInput({
@@ -46,7 +48,8 @@
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
             name: "address-town",
-            autocomplete: "address-level2"
+            autocomplete: "address-level2",
+            value: data['address-town']
           }) }}
         
           {{ govukInput({
@@ -55,7 +58,8 @@
             },
             classes: "govuk-!-width-two-thirds",
             id: "address-county",
-            name: "address-county"
+            name: "address-county",
+            value: data['address-county']
           }) }}
         
           {{ govukInput({
@@ -65,10 +69,13 @@
             classes: "govuk-input--width-10",
             id: "address-postcode",
             name: "address-postcode",
-            autocomplete: "postal-code"
+            autocomplete: "postal-code",
+            value: data['address-postcode']
           }) }}
         
         {% endcall %}
+
+        <input type="hidden" name="questions-answered" value="true">
 
         {{ govukButton({
           text: "Continue"

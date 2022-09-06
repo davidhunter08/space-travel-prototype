@@ -11,7 +11,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" action="/v1/name">
+      {% if data['questions-answered'] == 'true' %}
+        <form method="post" action="/v1/check-answers">
+        {% else %}
+        <form method="post" action="/v1/name">
+      {% endif %}
       
         {{ govukRadios({
           idPrefix: "where-to-go",
@@ -25,12 +29,14 @@
           },
           items: [
             {
-              value: "moon",
-              text: "The Moon"
+              value: "The Moon",
+              text: "The Moon",
+              checked: checked("where-to-go", "The Moon")
             },
             {
-              value: "mars",
-              text: "Mars"
+              value: "Mars",
+              text: "Mars",
+              checked: checked("where-to-go", "Mars")
             }
           ]
         }) }}

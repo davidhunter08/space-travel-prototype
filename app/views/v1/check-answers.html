@@ -23,7 +23,7 @@
               text: "Where you want to go"
             },
             value: {
-              text: "The Moon"
+              text: data['where-to-go']
             },
             actions: {
               items: [
@@ -40,7 +40,7 @@
               text: "Name"
             },
             value: {
-              text: "Sarah Philips"
+              text: data['full-name']
             },
             actions: {
               items: [
@@ -57,7 +57,7 @@
               text: "Address"
             },
             value: {
-              html: "72 Guild Street<br>London<br>SE23 6FH"
+              html: data['address-line-1'] + "<br>" + data['address-line-2'] + "<br>" + data['address-town'] + "<br>" + data['address-county'] + "<br>" + data['address-postcode']
             },
             actions: {
               items: [
